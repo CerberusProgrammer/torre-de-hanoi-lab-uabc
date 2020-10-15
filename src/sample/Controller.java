@@ -43,10 +43,6 @@ public class Controller {
 
     @FXML
     void move(MouseEvent event) {
-        //((Rectangle)event.getSource()).setX(event.getX() - ((Rectangle)event.getSource()).getWidth() / 2);
-        //((Rectangle)event.getSource()).setY(event.getY() - ((Rectangle)event.getSource()).getHeight() / 2);
-
-        System.out.println("ok");
         Dragboard dragboard = ((Rectangle)event.getSource()).startDragAndDrop(TransferMode.ANY);
         ClipboardContent clipboardContent = new ClipboardContent();
         clipboardContent.putString(((Rectangle)event.getSource()).getId());
@@ -57,9 +53,7 @@ public class Controller {
 
     @FXML
     void addTowerA(DragEvent event) {
-        System.out.println("addTowerA");
         String str = event.getDragboard().getString();
-        System.out.println(str);
         switch (str){
             case "disk0":
                 towerA.getChildren().add(towerA.getChildren().size(), disk0);
@@ -109,11 +103,6 @@ public class Controller {
         if (event.getDragboard().hasString()) {
             event.acceptTransferModes(TransferMode.ANY);
         }
-    }
-
-    @FXML
-    void asas(MouseEvent event) {
-        System.out.println("as");
     }
 
 }
