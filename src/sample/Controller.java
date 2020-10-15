@@ -1,15 +1,17 @@
 package sample;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.input.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
-import org.w3c.dom.css.Rect;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
-public class Controller {
+public class Controller implements Initializable {
 
     @FXML
     private Label textNotices;
@@ -49,7 +51,7 @@ public class Controller {
     @FXML
     void addTowerA(DragEvent event) {
         String str = event.getDragboard().getString();
-
+        
         switch (str){
             case "disk0":
                 if (towerA.getChildren().isEmpty())
@@ -107,13 +109,6 @@ public class Controller {
                 else
                     textNotices.setText("El disco es mas grande que el otro, debe ser uno mas chico.");
                 break;
-        }
-    }
-
-    @FXML
-    void removeTowerA(DragEvent event) {
-        if (event.getDragboard().hasString()) {
-            event.acceptTransferModes(TransferMode.ANY);
         }
     }
 
@@ -178,13 +173,6 @@ public class Controller {
                 else
                     textNotices.setText("El disco es mas grande que el otro, debe ser uno mas chico.");
                 break;
-        }
-    }
-
-    @FXML
-    void removeTowerB(DragEvent event) {
-        if (event.getDragboard().hasString()) {
-            event.acceptTransferModes(TransferMode.ANY);
         }
     }
 
@@ -256,10 +244,29 @@ public class Controller {
     }
 
     @FXML
+    void removeTowerA(DragEvent event) {
+        if (event.getDragboard().hasString()) {
+            event.acceptTransferModes(TransferMode.ANY);
+        }
+    }
+
+    @FXML
+    void removeTowerB(DragEvent event) {
+        if (event.getDragboard().hasString()) {
+            event.acceptTransferModes(TransferMode.ANY);
+        }
+    }
+
+    @FXML
     void removeTowerC(DragEvent event) {
         if (event.getDragboard().hasString()) {
             event.acceptTransferModes(TransferMode.ANY);
         }
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        for (int i = 0; i < towerB.getChildren().size() - 1; i++)
+            towerB.getChildren().get(i).setDisable(true);
+    }
 }
