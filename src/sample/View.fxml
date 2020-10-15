@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.*?>
@@ -10,22 +12,59 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <AnchorPane layoutY="-1.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: red; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <AnchorPane layoutY="-1.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #037171; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <padding>
             <Insets top="20.0" />
          </padding>
          <children>
-            <Pane layoutX="378.0" layoutY="14.0" prefHeight="57.0" prefWidth="505.0" style="-fx-background-color: purple; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0); -fx-background-radius: 20;">
+            <Pane layoutX="378.0" layoutY="14.0" prefHeight="57.0" prefWidth="505.0" style="-fx-background-color: #03312E; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0); -fx-background-radius: 20;">
                <children>
-                  <Label alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="10.0" layoutY="11.0" prefHeight="36.0" prefWidth="505.0" style="-fx-font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; -fx-font-size: 30; -fx-text-transform: full-width;;" text="TORRE DE HANOI" textAlignment="RIGHT" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+                  <Label alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="10.0" layoutY="11.0" prefHeight="36.0" prefWidth="505.0" style="-fx-font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; -fx-font-size: 30; -fx-text-transform: full-width; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);" text="TORRE DE HANOI" textAlignment="RIGHT" textFill="WHITE" textOverrun="CLIP" wrapText="true">
                      <font>
                         <Font name="HoloLens MDL2 Assets" size="30.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
+            <Pane layoutX="16.0" layoutY="342.0" prefHeight="347.0" prefWidth="350.0" style="-fx-background-color: #009F93; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);">
+               <children>
+                  <Pane layoutX="155.0" layoutY="14.0" prefHeight="302.0" prefWidth="41.0" style="-fx-background-color: #02C3BD; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);" />
+                  <VBox fx:id="towerA" alignment="BOTTOM_CENTER" layoutX="29.0" layoutY="14.0" onDragDropped="#addTowerA" onDragOver="#removeTowerA" prefHeight="275.0" prefWidth="293.0" />
+                  <Pane layoutX="16.0" layoutY="286.0" prefHeight="47.0" prefWidth="318.0" style="-fx-background-color: #02C3BD; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);" />
+               </children>
+            </Pane>
+            <Pane layoutX="448.0" layoutY="342.0" prefHeight="347.0" prefWidth="350.0" style="-fx-background-color: #009F93; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);">
+               <children>
+                  <Pane layoutX="155.0" layoutY="14.0" prefHeight="302.0" prefWidth="41.0" style="-fx-background-color: #02C3BD; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);" />
+                  <VBox fx:id="towerB" alignment="BOTTOM_CENTER" layoutX="29.0" layoutY="19.0" onDragDropped="#addTowerB" onDragOver="#removeTowerB" prefHeight="268.0" prefWidth="293.0" />
+                  <Pane layoutX="16.0" layoutY="286.0" prefHeight="47.0" prefWidth="318.0" style="-fx-background-color: #02C3BD; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);" />
+               </children>
+            </Pane>
+            <Pane layoutX="894.0" layoutY="342.0" prefHeight="347.0" prefWidth="350.0" style="-fx-background-color: #009F93; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);">
+               <children>
+                  <Pane layoutX="155.0" layoutY="14.0" prefHeight="302.0" prefWidth="41.0" style="-fx-background-color: #02C3BD; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);" />
+                  <VBox fx:id="towerC" alignment="BOTTOM_CENTER" layoutX="29.0" layoutY="19.0" prefHeight="268.0" prefWidth="293.0" />
+                  <Pane layoutX="16.0" layoutY="286.0" prefHeight="47.0" prefWidth="318.0" style="-fx-background-color: #02C3BD; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);" />
+               </children>
+            </Pane>
+            <Pane layoutX="277.0" layoutY="86.0" prefHeight="137.0" prefWidth="693.0" style="-fx-background-color: #00B9AE; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0); -fx-background-radius: 20;">
+               <children>
+                  <Label fx:id="textNotices" alignment="CENTER" contentDisplay="CENTER" layoutX="-3.0" layoutY="5.0" prefHeight="126.0" prefWidth="699.0" text="Arrastra los discos hacia la tercera torre." textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Rectangle fx:id="disk6" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="35.0" layoutX="76.0" layoutY="51.0" onDragDetected="#move" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);" width="170.0" />
+            <Rectangle fx:id="disk5" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="35.0" layoutX="66.0" layoutY="86.0" onDragDetected="#move" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);" width="190.0" />
+            <Rectangle fx:id="disk4" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="35.0" layoutX="56.0" layoutY="121.0" onDragDetected="#move" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);" width="210.0" />
+            <Rectangle fx:id="disk3" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="35.0" layoutX="46.0" layoutY="156.0" onDragDetected="#move" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);" width="230.0" />
+            <Rectangle fx:id="disk2" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="35.0" layoutX="36.0" layoutY="191.0" onDragDetected="#move" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);" width="250.0" />
+            <Rectangle fx:id="disk1" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="35.0" layoutX="26.0" layoutY="226.0" onDragDetected="#move" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);" width="270.0" />
+            <Rectangle fx:id="disk0" arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="35.0" layoutX="16.0" layoutY="261.0" onDragDetected="#move" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0,0,0);" width="290.0" />
          </children>
       </AnchorPane>
    </children>
