@@ -266,7 +266,6 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        for (int i = 0; i < towerB.getChildren().size() - 1; i++)
-            towerB.getChildren().get(i).setDisable(true);
+
     }
 }
