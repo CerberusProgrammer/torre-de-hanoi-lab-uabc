@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.input.*;
@@ -32,6 +33,11 @@ public class Controller {
     private VBox towerB;
     @FXML
     private VBox towerC;
+
+    @FXML
+    void resolve(ActionEvent event) {
+
+    }
 
     @FXML
     void move(MouseEvent event) {
@@ -175,7 +181,7 @@ public class Controller {
     void addTowerC(DragEvent event) {
         String str = event.getDragboard().getString();
 
-        if (towerC.getChildren().size() == 7)
+        if (towerC.getChildren().size() == 6)
             textNotices.setText("¡Felicidades! ¡Has ganado!");
 
         switch (str){
