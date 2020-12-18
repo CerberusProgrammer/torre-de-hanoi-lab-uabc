@@ -1,6 +1,9 @@
 package sample;
 
+import javafx.concurrent.Task;
+import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.input.*;
@@ -36,7 +39,17 @@ public class Controller {
 
     @FXML
     void resolve(ActionEvent event) {
+        hanoi(towerB.getChildren().size(), towerB, towerA, towerC);
+    }
 
+    void hanoi(int n, VBox towerA, VBox towerB, VBox towerC) {
+        if (n == 0)
+            return;
+
+        hanoi(n - 1, towerA, towerC, towerB);
+        textNotices.setText("Mueve el disco " + n + " de la " + towerA.getId() + " a la torre " + towerC.getId());
+        towerC.getChildren().add(towerA.getChildren().get(towerA.getChildren().size() - 1));
+        hanoi(n - 1, towerB, towerA, towerC);
     }
 
     @FXML
